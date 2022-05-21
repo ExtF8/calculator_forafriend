@@ -27,7 +27,7 @@ h1 {
     gap: 2px;
     min-height: 100px;
     grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);   
+    grid-template-rows: minmax(120px, auto) repeat(6, 100px);   
     
 }
 
@@ -74,4 +74,32 @@ h1 {
 .output .current-operand {
     color: white;
     font-size: 2.5rem;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip::before {
+    content: attr(data-text);
+    /* text-indent: -3.9em; add negative text offset to hide class name */
+    display: grid;
+    align-self: center;
+    font-size: small;
+    position: absolute; 
+    bottom: 50%;
+    background: radial-gradient(green, yellow); 
+    color: #FFF; 
+    padding: 5px; 
+    border-radius: 5px;
+    opacity:0; 
+    transition:0.3s; 
+    overflow:hidden;
+    max-width: 100%; /* avoids very long sentences */
+    pointer-events: none; /* prevents tooltip from firing on pseudo hover */
+}
+
+.tooltip:hover::before {
+    opacity: 1;
+    bottom: 100%;
 }
