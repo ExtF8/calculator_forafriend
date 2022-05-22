@@ -10,7 +10,7 @@ class Calculator {
     
         // clear all the different variables
     clear() {
-        this.currentOperand = ''
+        this.currentOperand = '0'
         this.previousOperand = ''
         this.operation = undefined
     }
@@ -22,7 +22,7 @@ class Calculator {
         //user clicks -> add to display 
     appendNumber(number) {
         if (number === '.' && this.currentOperand.includes('.')) return
-        this.currentOperand = this. currentOperand.toString() + number.toString()
+        this.currentOperand = this.currentOperand.toString() + number.toString()
     }
     
         //determines what happens anytime user cliks any operButton
@@ -47,7 +47,7 @@ class Calculator {
                 computation = prev + current
                 break
                 case '-':
-                    computation = prev - current
+                computation = prev - current
                 break
             case '*':
                 computation = prev * current
