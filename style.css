@@ -40,7 +40,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    outline: 2px red solid;
+    /* outline: 2px red solid; */
     margin: 0;
     padding: 10px 0;    
    
