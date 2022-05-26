@@ -1,4 +1,5 @@
 
+
 // in this class constructor takes all the inputs for it and all the calculator functions. store the output.
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
@@ -36,7 +37,10 @@ class Calculator {
         this.currentOperand = ''
     }
     
-        //takes values inside calculator -> displays resuts
+    
+    
+
+    //takes values inside calculator -> displays resuts
     compute() {
         let computation
         const prev = parseFloat(this.previousOperand)
@@ -55,15 +59,15 @@ class Calculator {
             case '/':
                 computation = prev / current
                 break
-            
+                
                 default:
                 return
             }
-        this.currentOperand = computation
+            this.currentOperand = computation
         this.operation = undefined
         this.previousOperand = ''
     }
-
+    
     getDisplayNumber(number) {
         const stringNumber = number.toString()
         const integerDigits = parseFloat(stringNumber.split('.')[0])
@@ -85,7 +89,7 @@ class Calculator {
     updateDisplay() {
         this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
         if (this.operation != null) {
-         this.previousOperandTextElement.innerText =`${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+            this.previousOperandTextElement.innerText =`${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
         } else {
             this.previousOperandTextElement.innerText = ''
         }
@@ -131,8 +135,42 @@ allClearButton.addEventListener('click', button => {
 })
 
 deleteButton.addEventListener('click', button => {
-  calculator.delete()
+    calculator.delete()
   calculator.updateDisplay()
 })
 
-
+// keyboard num pad
+document.addEventListener('keydown', function (event) {
+    let patternForNumbers = /[0-9]/g;
+    let patternForOperators = /[+\-*\/]/g
+    if (event.key.match(patternForNumbers)) {
+        event.preventDefault();
+        calculator.appendNumber(event.key)
+        calculator.updateDisplay()
+    }
+    if (event.key === '.') {
+        event.preventDefault();
+        calculator.appendNumber(event.key)
+        calculator.updateDisplay()
+    }
+    if (event.key.match(patternForOperators)) {
+        event.preventDefault();
+        calculator.chooseOperation(event.key)
+        calculator.updateDisplay()
+    }
+    if (event.key === 'Enter' || event.key === '=') {
+        event.preventDefault();
+        calculator.compute()
+        calculator.updateDisplay()
+    }
+    if (event.key === 'Backspace') {
+        event.preventDefault();
+        calculator.clear()
+        calculator.updateDisplay()
+    }
+    if (event.key === 'Delete') {
+        event.preventDefault();
+        calculator.delete()
+        calculator.updateDisplay()
+    }
+});
