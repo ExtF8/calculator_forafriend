@@ -15,7 +15,7 @@ class Calculator {
         this.previousOperand = ''
         this.operation = undefined
     }
-        // clering a single numb
+        // clearing a single numb
     delete() {
         this.currentOperand = this.currentOperand.toString().slice(0, -1)    
     }
@@ -26,7 +26,7 @@ class Calculator {
         this.currentOperand = this.currentOperand.toString() + number.toString()
     }
     
-        //determines what happens anytime user cliks any operButton
+        //determines what happens anytime user clicks any operButton
     chooseOperation(operation) {
         if (this.currentOperand === '') return
         if (this.previousOperand !== '') {
@@ -40,7 +40,7 @@ class Calculator {
     
     
 
-    //takes values inside calculator -> displays resuts
+    //takes values inside calculator -> displays results
     compute() {
         let computation
         const prev = parseFloat(this.previousOperand)
@@ -100,7 +100,7 @@ class Calculator {
 
 // this selects  calculator's buttons and operations - classes from html
 const numberButtons = document.querySelectorAll('[data-number]')
-const operationButons = document.querySelectorAll('[data-operation]')
+const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-delete]')
 const allClearButton = document.querySelector('[data-all-clear]')
@@ -117,7 +117,7 @@ numberButtons.forEach(button => {
     })
 })
 
-operationButons.forEach(button => {
+operationButtons.forEach(button => {
     button.addEventListener('click', () => {
         calculator.chooseOperation(button.innerText)
         calculator.updateDisplay()
@@ -174,3 +174,4 @@ document.addEventListener('keydown', function (event) {
         calculator.updateDisplay()
     }
 });
+
