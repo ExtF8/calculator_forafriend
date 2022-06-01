@@ -26,7 +26,7 @@ class Calculator {
         this.currentOperand = this.currentOperand.toString() + number.toString()
     }
     
-        //determines what happens anytime user clicks any operButton
+        //determines what happens anytime user clicks any operation Button
     chooseOperation(operation) {
         if (this.currentOperand === '') return
         if (this.previousOperand !== '') {
@@ -49,19 +49,19 @@ class Calculator {
         switch (this.operation) {
             case '+':
                 computation = prev + current
-                break
-                case '-':
+                break;
+            case '-':
                 computation = prev - current
-                break
+                break;
             case '*':
                 computation = prev * current
-                break
+                break;
             case '/':
                 computation = prev / current
-                break
+                break;
                 
-                default:
-                return
+            default:
+                computation = this.currentOperand
             }
             this.currentOperand = computation
         this.operation = undefined
@@ -76,7 +76,7 @@ class Calculator {
         if (isNaN(integerDigits)) {
             integerDisplay = ''
         } else {
-            integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
+            integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0})
         }
         if (decimalDigits != null) {
             return `${integerDisplay}.${decimalDigits}`
