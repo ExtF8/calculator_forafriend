@@ -59,6 +59,8 @@ body {
     background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
 }
 
+/* need to add overflow to display */
+
 #calculator {
     display: flex;
     justify-content: center;
@@ -117,6 +119,7 @@ body {
     word-break: break-all;
     height: 126px;
     border-radius: 4px;
+    overflow: hidden;
 }
 
 
