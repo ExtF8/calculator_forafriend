@@ -97,11 +97,11 @@ body {
     background-color: #CBCE91FF;
 }
 
-.span-two-vert {
+.span-two-vertical {
     grid-row: span 2;
 }
 
-.span-two-horz {
+.span-two-horizontal {
     grid-column: span 2;
 }
 
