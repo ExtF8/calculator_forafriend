@@ -31,13 +31,22 @@ class Calculator {
         if (this.currentOperand === '') return
         if (this.previousOperand !== '') {
             this.compute()
-        }
+        } 
+        
         this.operation = operation
         this.previousOperand = this.currentOperand
         this.currentOperand = ''
     }
     
     
+    // limits the number of digits
+    // function exceedsDisplay() {
+    //     if (displayNumber.length >= 9 || rawData.length >= 45) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // }
     
 
     //takes values inside calculator -> displays results
@@ -61,7 +70,7 @@ class Calculator {
                 break;
                 
             default:
-                computation = this.currentOperand
+                return
             }
             this.currentOperand = computation
         this.operation = undefined
@@ -93,10 +102,10 @@ class Calculator {
         } else {
             this.previousOperandTextElement.innerText = ''
         }
-        
     }
-
 }
+
+
 
 // this selects  calculator's buttons and operations - classes from html
 const numberButtons = document.querySelectorAll('[data-number]')
