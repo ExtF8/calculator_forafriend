@@ -130,3 +130,42 @@ keys.addEventListener('click', e => {
     updateCalculatorState(key, calculator, resultString, displayedNum)
     updateVisualState(key, calculator)
 })
+
+
+// keyboard num pad
+document.addEventListener('keydown', e => {
+    let patternForNumbers = /[0-9]/g;
+    let patternForOperators = /[+\-*\/]/g
+    if (e.target.match(patternForNumbers)) {
+        e.preventDefault();
+        calculator.createResultString(e.key)
+        calculator.updateVisualState()
+    }
+    if (event.key === '.') {
+        event.preventDefault();
+        calculator.appendNumber(event.key)
+        calculator.updateDisplay()
+    }
+    if (event.key.match(patternForOperators)) {
+        event.preventDefault();
+        calculator.chooseOperation(event.key)
+        calculator.updateDisplay()
+    }
+    if (event.key === 'Enter' || event.key === '=') {
+        event.preventDefault();
+        calculator.compute()
+        calculator.updateDisplay()
+    }
+    if (event.key === 'Backspace') {
+        event.preventDefault();
+        calculator.clear()
+        calculator.updateDisplay()
+    }
+    if (event.key === 'Delete') {
+        event.preventDefault();
+        calculator.delete()
+        calculator.updateDisplay()
+    }
+});
+
+

@@ -145,7 +145,7 @@ allClearButton.addEventListener('click', button => {
 
 deleteButton.addEventListener('click', button => {
     calculator.delete()
-  calculator.updateDisplay()
+    calculator.updateDisplay()
 })
 
 // keyboard num pad
