@@ -1,7 +1,27 @@
-# calculator_forafriend
-This is JS calculator that I'm coding for a friend.
+# Calculator for a Friend
 
-By coding 'Calculator for a Friend' I intend to learn more about JavaScript fundamentals.
-And improve on my html and css skills.
+## Overview
 
+"Calculator for a Friend" is a JavaScript calculator project designed to reinforce fundamental JavaScript concepts and improve HTML and CSS skills. This practical application allows users to perform basic arithmetic operations and serves as a hands-on learning experience.
 
+## Features
+
+-   Addition
+-   Subtraction
+-   Multiplication
+-   Division
+
+## Usage
+
+1. Open the calculator in your web browser.
+2. Enter the numbers using the number buttons.
+3. Use the operation buttons (+, -, \*, /) to perform calculations.
+4. The result will be displayed on the screen.
+
+## Live Demo
+
+You can view a live demo of the project [here](https://extf8.github.io/calculator_forafriend/).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
