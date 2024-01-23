@@ -69,14 +69,18 @@ class Calculator {
                 return;
         }
 
-        // Truncate the result to 9 digits
-        const truncatedResult = computation.toFixed(9).toString();
+        // // Truncate the result to 9 digits
+        // const truncatedResult = computation.toFixed(9).toString();
 
-        if (truncatedResult.length > 9) {
-            this.currentOperand = 'Error';
-        } else {
-            this.currentOperand = truncatedResult;
-        }
+        // if (truncatedResult.length > 9) {
+        //     this.currentOperand = 'Error';
+        // } else {
+        //     this.currentOperand = truncatedResult;
+        // }
+
+        // Use toExponential to convert the result to scientific notation
+        const scientificNotationResult = computation.toExponential();
+        this.currentOperand = scientificNotationResult;
 
         this.operation = undefined;
         this.previousOperand = '';
@@ -103,13 +107,12 @@ class Calculator {
 
     //updates values inside of the output
     updateDisplay() {
-
-        // Displays Err on display if result is bigger than 9 digits
-        if (this.currentOperand === 'Error') {
-            this.currentOperandTextElement.innerText = 'Err';
-            this.previousOperandTextElement.innerText = '';
-            return;
-        }
+        // // Displays Err on display if result is bigger than 9 digits
+        // if (this.currentOperand === 'Error') {
+        //     this.currentOperandTextElement.innerText = 'Err';
+        //     this.previousOperandTextElement.innerText = '';
+        //     return;
+        // }
 
         this.currentOperandTextElement.innerText = this.getDisplayNumber(
             this.currentOperand
